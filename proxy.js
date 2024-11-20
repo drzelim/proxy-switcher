@@ -27,13 +27,14 @@ export const setAllProxy = () => {
 const fullHosts = [
     'www.youtube.com',
     'rr1---sn-gxuo03g-ig3e.googlevideo.com', // узел с которого запрашивается видео для youtube
+    'i.ytimg.com', // узел с которого запрашивается картинки для youtube
     'chatgpt.com',
 ];
 
 const partialHosts = ['googlevideo.com'];
 
 const pacScriptData =
-        `function FindProxyForURL(url, host) {
+    `function FindProxyForURL(url, host) {
         const fullHosts = ${JSON.stringify(fullHosts)};
         const partialHosts = ${JSON.stringify(partialHosts)};
         
